@@ -4,9 +4,7 @@ A command-line implementation of the classic **Snake and Ladders** board game bu
 
 ---
 
-##
-
-UML DIAGRAM
+## UML DIAGRAM
 
 ![UML DIAGRAM](UML.png)
 
