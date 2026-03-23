@@ -1,4 +1,4 @@
-# 🐍🪜 Snake and Ladders
+# Snake and Ladders
 
 A command-line implementation of the classic **Snake and Ladders** board game built in Java. Supports configurable board sizes, multiple players, and randomly generated snakes & ladders.
 
@@ -7,14 +7,6 @@ A command-line implementation of the classic **Snake and Ladders** board game bu
 ## UML DIAGRAM
 
 ![UML DIAGRAM](UML.png)
-
-## Features
-
-- **Configurable board size** — play on any `n × n` grid
-- **Multi-player support** — any number of players can join
-- **Randomly generated snakes & ladders** — unique board layout every game
-- **Turn-by-turn logging** — detailed output for every roll, including snake bites, ladder climbs, and overshoots
-- **Leaderboard** — final ranking of all players at the end
 
 ---
 
@@ -93,34 +85,3 @@ SnakeAndLadders/
 ├── MoveType.java              # Enum: NORMAL, SNAKE, LADDER, OVERSHOT
 └── Logger.java                # Formats and prints game events
 ```
-
----
-
-## Architecture
-
-```
-Main
- └─► Game
-      ├─► Board
-      │    ├─► SnakeGenerator  ──► Snake
-      │    └─► LadderGenerator ──► Ladder
-      ├─► Dice
-      ├─► Player (Queue)
-      └─► Logger
-```
-
-| Component                            | Responsibility                                                      |
-| ------------------------------------ | ------------------------------------------------------------------- |
-| `Main`                               | Collects user input and wires up all components                     |
-| `Game`                               | Runs the game loop; polls players from a queue each turn            |
-| `Board`                              | Holds snakes/ladders; resolves a roll into a `MoveResult`           |
-| `BoardFeatureGenerator<T>`           | Interface for generating board features (snakes or ladders)         |
-| `SnakeGenerator` / `LadderGenerator` | Produce `n` random snakes/ladders ensuring no overlapping positions |
-| `MoveResult` / `MoveType`            | Value objects describing the outcome of a move                      |
-| `Logger`                             | Prints turn-by-turn details and the final leaderboard               |
-
----
-
-## Requirements
-
-- **Java 8** or higher
